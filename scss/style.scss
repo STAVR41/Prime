@@ -1,0 +1,783 @@
+@import "_NullStyle";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Sans&display=swap');
+@font-face {
+	font-family: 'Akzidenz Grotesk BQ - Bd Cnd';
+	src: url('../fonts/AkzidenzGrotesk-BoldCond.eot');
+	src: local('☺'), url('../fonts/AkzidenzGrotesk-BoldCond.woff') format('woff'), url('../fonts/AkzidenzGrotesk-BoldCond.ttf') format('truetype'), url('../fonts/AkzidenzGrotesk-BoldCond.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+   font-family: "PT Sans";
+   &.lock {
+      @media (max-width:767px) {
+         overflow: hidden;
+      }
+   }
+   
+}
+
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   min-height: 100%;
+}
+.ibg {
+   position: relative;
+   & img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      max-width: 100%;
+      height: 100%;
+   }
+}
+
+.header {
+   padding: 30px 0;
+   z-index: 50;
+   @media (max-width:767px) {
+      padding: 10px 0;
+   }
+   &__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @media (max-width:767px) {
+         position: relative;
+         z-index: 10;
+      }
+   }
+
+   &__lang {
+      @media (max-width:767px) {
+         position: relative;
+         top: 10px;
+         left: 50px;
+         opacity: 0;
+         transition: all 0.3s;
+         padding: 0px 0 30px 0;
+         &.active {
+            opacity: 1;
+         }
+      }
+   }
+
+   &__lang-link {
+      color: #000;
+      font-size: 10px;
+      font-family: "Bebas Neue";
+      line-height: calc(25/10*100%);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      @media (max-width:767px) {
+         margin: 40px 0 10px 0;
+      }
+      &:not(:last-child) {
+         margin: 0 10px 0 0;
+      }
+   }
+
+   &__lang-order {
+      font-size: 15px;
+      line-height: calc(25/15*100%);
+      text-transform: uppercase;
+      text-decoration: underline;
+      color: #000000;
+      font-family: "Akzidenz Grotesk BQ - Bd Cnd";
+      @media (max-width:767px) {
+         font-size: 13px;
+      }
+   } 
+
+   &__bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      @media (max-width:767px) {
+         position: fixed;
+         top: 0px;
+         left: -100%;
+         width: 100%;
+         height: 100%;
+         background-color: rgb(255, 255, 255);
+         transition: all 0.6s;
+         z-index: 4;
+         display: block;
+         overflow: auto;
+         &.active {
+            left: 0;
+         }
+         &>:first-child {
+            margin: 100px 0 0 0;
+         }
+      }
+   }
+
+   &__column {
+   }
+
+   &__menu {
+      @media (max-width:767px) {
+         position: relative;
+         top: -20px;
+      }
+   }
+
+   &__img {
+      display: block;
+      text-align: center;
+      & span {
+         font-family: "Bebas Neue";
+         font-size: 8px;
+         text-transform: uppercase;
+         letter-spacing: 2.72px;
+         z-index: 3;
+         display: block;
+      }
+      & img {
+         max-width: 100%;
+      }
+      @media (max-width:767px) {
+         display: none;
+      }
+   }
+}
+
+.header-bg {
+   display: none;
+   @media (max-width:767px) {
+      display: block;
+      text-align: center;
+      margin: -50px 0 0 0;
+      & span {
+         font-family: "Bebas Neue";
+         font-size: 8px;
+         text-transform: uppercase;
+         letter-spacing: 2.72px;
+         z-index: 3;
+         display: block;
+      }
+      & img {
+         max-width: 100%;
+      }
+   }
+   
+}
+
+.menu {
+   &__list {
+      display: flex;
+      font-family: "Akzidenz Grotesk BQ - Bd Cnd";
+      font-size: 15px;
+      line-height: calc(25/15*100%);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      &>li:not(:last-child) {
+         padding: 0 46px 0 0;
+         @media (max-width:900px) {
+         padding: 0 20px 0 0;
+         }
+      }
+      @media (max-width:767px) {
+        display: flex;
+        flex-direction: column;
+        line-height: 120%;
+        padding: 0 0 0 20px;
+        font-size: 20px;
+      }
+   }
+   &__link {
+     color: #000;
+     display: block;
+     @media (max-width:767px) {
+      padding: 0 0 10px 0;
+     }
+   }
+}
+
+.header-menu{
+   @media(max-width: 767px) {
+   position: relative;
+   width: 30px;
+   height: 20px;
+   display: flex;
+   z-index: 10;
+   cursor: pointer;
+   top: -43px;
+   & span {
+      position: absolute;
+      width: 100%;
+      background-color: #000;
+      top: 9px;
+      height: 2px;
+      left: 0;
+     
+   }
+   &::before, &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+      transition: all 0.3s;
+   }
+   &::before {
+      bottom: 0;
+   }
+   &::after {
+      top: 0;
+   }
+   &.active::before {
+      transform: rotate(45deg);
+      top: 9px;
+   }
+   &.active::after {
+      transform: rotate(-45deg);
+      top: 9px;
+   }
+   &.active span{
+      transform: scale(0);
+   }
+   }
+}
+.main {
+   flex: 1 1 auto;
+}
+.private {
+   background-color: #000;
+   display: flex;
+   margin: 0 0 75px 0;
+   @media (max-width:767px) {
+      margin: 0 0 30px 0;
+   }
+		&__column {
+         flex: 0 1 50%;
+         @media (max-width:767px) {
+            flex: 1 1 100%;
+            text-align: center;
+         }
+		}
+
+      &__img {
+         display: block;
+         padding: 0 0 34.2% 0;
+         @media (max-width:420px) {
+            display: none;
+         }
+      }
+
+		&__item {
+         padding: 75px 0 75px 60px;
+         @media (min-width:768px) {
+            max-width: 400px;
+         }
+         @media (max-width:767px) {
+            padding: 30px 30px;
+         }
+		}
+
+		&__title {
+         color: #fff;
+         font-size: 50px;
+         line-height: calc(50/50*100%);
+         text-transform: uppercase;
+         letter-spacing: 5px;
+         font-family: "Akzidenz Grotesk BQ - Bd Cnd";
+         margin: 0 0 30px 0;
+         @media (max-width:767px) {
+            font-size: 30px;
+            margin: 0 0 10px 0;
+         }
+
+   		}
+
+		&__text {
+         font-size: 15px;
+         line-height: calc(25/15*100%);
+         color: #fff;
+         font-family: "PT Sans";
+         margin: 0 0 50px 0;
+         @media (max-width:767px) {
+            font-size: 14px;
+            margin: 0 0 15px 0;
+         }
+		}
+
+		&__battons {
+         @media (max-width:560px) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+         }
+		}
+
+		&__btn {
+         margin: 0 14px 0 0;
+         
+		}
+      &__link {
+         color: #fff;
+         font-family: "Bebas Neue";
+         font-size: 15px;
+         line-height: calc(25/15*100%);
+         text-transform: uppercase;
+         text-decoration: underline;
+         letter-spacing: 1.5px;
+         @media (max-width:560px) {
+          flex: 0 0 100%;
+          margin: 10px 0 0 0;  
+         }
+      }
+}
+
+.btn {
+   font-size: 15px;
+   color: #fff;
+   line-height: calc(25/15*100%);
+   background-color: #000;
+   display: inline-block;
+   padding: 0 33px;
+   height: 44px;
+   line-height: 44px;
+   font-family: "Bebas Neue";
+   transition: all 0.5s;
+   &:hover {
+      background-color: #fff;
+      color: #000;
+   }
+   &_w {
+      background-color: #fff;
+      color: #000;
+      &:hover {
+         background-color: #fff;
+         color: #000;
+         border-radius: 30px;
+      }
+   }
+}
+
+.container {
+   max-width: 880px;
+   margin: 0 auto;
+   padding: 0 20px;
+   box-sizing: content-box;
+}
+
+.selected {
+   background-color: #000;
+   padding: 4px;
+   color: #fff;
+}
+
+.catering {
+
+   &__body {
+      display: flex;
+      flex-wrap: wrap;
+      
+   }
+
+   &__column {
+      flex: 0 1 25%;
+      @media (max-width:767px) {
+         flex: 1 1 50%;
+         display: flex;
+         justify-content: center;
+      }
+      
+   }
+
+   &__item {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      
+   }
+
+   &__img {
+      display: block;
+      padding: 0 0 102.276% 0;
+      
+   }
+
+   &__title {
+      font-size: 25px;
+      color: #000;
+      line-height: calc(25/25*100%);
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      padding: 0 0 30px 0;
+      font-family: "Akzidenz Grotesk BQ - Bd Cnd";
+      max-width: 150px;
+      @media (max-width:767px) {
+         font-size: 18px;
+         padding: 10px 0 10px 0;
+      }
+   }
+
+   &__text {
+      color: #000;
+      line-height: calc(25/15*100%);
+      font-size: 15px;
+      padding: 0 0 30px 0;
+      max-width: 175px;
+      flex: 1 1 auto;
+      @media (max-width:767px) {
+         font-size: 14px;
+         padding: 0 0 10px;
+      }
+   }
+
+   &__battons {
+      @media (max-width:767px) {
+         margin: 0 0 30px 0;  
+           
+        }
+   }
+
+   &__btn {
+      margin: 0 0 30px 0;
+      @media (max-width:767px) {
+         margin: 0 0 10px 0;  
+           
+        }
+   }
+
+   &__view {
+      color: #000;
+      font-size: 15px;
+      line-height: calc(25/15*100%);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-family: "Bebas Neue";
+      text-decoration: underline;
+      display: block;
+   }
+}
+
+.who {
+   display: flex;
+   background-color: #000;
+   margin: 80px 0 0px;
+   @media (max-width:992px) {
+      margin: 30px 0 0px;  
+     }
+     @media (max-width:767px) {
+      margin: 0px 0 0px 0;  
+        
+     }
+   &__column {
+      flex: 0 1 50%;
+      @media (max-width:767px) {
+         flex: 0 1 100%;
+        }
+   }
+
+   &__item {
+      display: flex;
+      justify-content: flex-end;
+      @media (max-width:767px) {
+         justify-content: center;
+        }
+   }
+
+   &__title {
+      color: #fff;
+      font-size: 50px;
+      line-height: calc(25/50*100%);
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-family: "Akzidenz Grotesk BQ - Bd Cnd";
+      padding: 60px 60px 60px 0;
+      @media (max-width:992px) {
+         font-size: 40px;
+         padding: 40px 20px 40px;
+        }
+        @media (max-width:767px) { 
+           padding: 30px 10px;
+           font-size: 35px;
+        }
+   }
+
+   &__img {
+      background: url("../img/who/Layer_3.jpg") no-repeat;
+      object-fit: cover;
+      @media (max-width:767px) {
+         display: none;
+           
+        }
+   }
+}
+
+.time {
+   background-color: #ebebeb;
+   padding: 50px 0;
+   @media (max-width:767px) {
+      padding: 20px 0;
+   }
+   &__body {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -21.5px;
+      @media (max-width:767px) {
+         margin: 0;
+      }
+   }
+
+   &__column {
+      flex: 0 1 50%;
+      padding: 0 21.5px;
+      margin: 0 0 20px 0;
+      @media (max-width:767px) {
+         flex: 0 1 100%;
+         padding: 0;
+      }
+   }
+
+   &__item {
+      display: flex;
+   }
+
+   &__img {
+      min-width: 100px;
+      height: 100px;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      & img {
+         max-width: 100%;
+      }
+   }
+
+   &__cont {
+      padding: 0 0 0 10px;
+   }
+
+   &__title {
+      font-family: "Akzidenz Grotesk BQ - Bd Cnd";
+      font-size: 25px;
+      color: #000;
+      line-height: calc(25/25*100%);
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      padding: 0 0 30px 0;
+      @media (max-width:767px) {
+         padding: 0px 0 10px;
+         font-size: 18px;
+      }
+   }
+
+   &__text {
+      font-size: 15px;
+      line-height: calc(25/15*100%);
+      color: #000;
+      @media (max-width:767px) {
+         font-size: 14px;
+      }
+   }
+}
+
+
+
+.hello {
+      padding: 80px 0 30px;
+      @media (max-width:650px) {
+         padding: 20px 0;
+      }
+		&__title {
+      font-family: "Akzidenz Grotesk BQ - Bd Cnd";
+      color: #000;
+      font-size: 50px;
+      line-height: calc(25/50*100%);
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      padding: 0 0 40px 0;
+      @media (max-width:650px) {
+         padding: 0px 0 20px;
+         font-size: 35px;
+         text-align: center;
+      }
+		}
+
+		&__body {
+         display: flex;
+         flex-wrap: wrap;
+		}
+
+		&__column {
+         flex: 0 1 50%;
+         padding: 0 0 30px 0;
+         @media (max-width:650px) {
+            flex: 0 1 100%;
+         }
+		}
+
+		&__item {
+		}
+
+		&__link {
+         color: #000;
+         font-size: 15px;
+         line-height: calc(25/15*100%);
+         padding: 0 0px 0 30px;
+         display: block;
+		}
+      &__list {
+         display: flex;
+         & li {
+            &:not(:last-child) {
+               padding: 0 30px 0 0;
+            }
+         }
+      }
+}
+
+.adress {
+   background: url("../img/hello/vv.png") no-repeat;
+}
+
+.tel {
+   background: url("../img/hello/telephone.png") no-repeat;
+}
+.email {
+   background: url("../img/hello/email.png") no-repeat;
+}
+
+#map {
+   height: 100%;
+   @media (max-width:767px) {
+      display: none;
+   }
+}
+
+.form {
+   background-color: #000;
+   display: flex;
+   flex-wrap: wrap;
+   @media (max-width:767px) {
+      display: flex;
+      flex-direction: column;
+   }
+   &__column {
+      flex: 0 0 50%;
+      @media (max-width:767px) {
+         flex: 0 1 100%;
+
+      }
+   }
+
+   &__item {
+   }
+}
+.item-form {
+   position: relative;
+   padding: 50px 10px 50px 60px;
+   @media (max-width:767px) {
+      padding: 20px 10px;
+      text-align: center;
+      
+   }
+   &__title {
+      font-family: "Akzidenz Grotesk BQ - Bd Cnd";
+      color: #fff;
+      line-height: calc(25/25*100%);
+      font-size: 25px;
+      text-transform: uppercase;
+      padding: 0 0 30px;
+      @media (max-width:767px) {
+         font-size: 35px;
+         padding: 0 0 15px;
+      }
+   }
+   &__form {
+      max-width: 375px;
+      @media (max-width:767px) {
+         max-width: 75%;
+         margin: 0 auto;
+      }
+      &>*:not(:last-child) {
+         margin: 0 0 25px 0;
+      }
+   }
+   &__name {
+      
+   }
+
+   &__email {
+   }
+
+   &__text {
+   }
+   &__button {
+      
+   }
+}
+.input {
+   background-color: #252525;
+   border: 2px solid #959595;
+   color: #959595;
+   font-size: 15px;
+   line-height: calc(25/15*100%);
+   padding: 20px 0 20px 18px;
+   width: 100%;
+   &:hover {
+      box-shadow: 1px 1px #b6b6b6;
+   }
+   &:focus {
+      background-color: #353535;
+   }
+}
+
+.btn-form {
+   @media (max-width:767px) {
+      width: 100%;
+      border-radius: 30px;
+   }
+}
+
+.footer {
+   padding: 50px 0;
+   @media (max-width:767px) {
+      padding: 20px 0;
+   }
+   &__body {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @media (max-width:557px) {
+         flex-direction: column;
+         &>:first-child {
+            order: 2;
+         }
+         &>:last-child {
+            order: 1;
+         }
+      }
+   }
+
+   &__column {
+
+   }
+
+   &__link {
+      font-size: 15px;
+      line-height: calc(25/15*100%);
+      color: #000;
+      & span {
+         text-decoration: underline;
+      }
+   }
+
+   &__img {
+      
+      
+   }
+}
+
+
